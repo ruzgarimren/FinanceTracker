@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <fieldset>
+            <div class="form-group">
+                <label for="symbol">Select Symbol</label>
+                <select id="symbol" name="symbol" class="form-control">
+                    <option value="" disabled selected>Select Symbol</option>
+                    <!-- Loop through and display user's owned symbols here -->
+                    {% for symbol in symbols %}
+                        <option value="{{ symbol.symbol }}">{{ symbol.symbol }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="shares" placeholder="Shares" type="number" min="0">
+            </div>
+            <button class="btn btn-primary" type="submit">Sell</button>
+        </fieldset>
+    </form>
+{% endblock %}
