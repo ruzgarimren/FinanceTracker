@@ -15,7 +15,6 @@ Finance Tracker is a powerful and user-friendly web application that empowers in
 
 ## Technologies Used
 
-- Python
 - Flask
 - SQLite
 - HTML/CSS
